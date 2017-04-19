@@ -12,12 +12,11 @@ var ProductListComponent = (function () {
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.showImage = false;
-        this.listFilter = 'cart';
+        this.listFilter = '';
         this.products = [
             {
                 'productId': 1,
-                'productName': 'Leaf Rake',
-                'productCode': 'GDN-0011',
+                'productName': 'Leaf Rake', 'productCode': 'GDN-0011',
                 'releaseDate': 'March 19, 2016',
                 'description': 'Leaf rake with 48-inch wooden handle.',
                 'price': 19.95,
@@ -69,12 +68,17 @@ var ProductListComponent = (function () {
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
     };
+    ProductListComponent.prototype.ngOnInit = function () {
+        console.log('In init');
+    };
     return ProductListComponent;
 }());
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-products',
-        templateUrl: 'app/products/product-list.component.html'
+        moduleId: module.id,
+        templateUrl: 'product-list.component.html',
+        styleUrls: ['product-list.component.css']
     })
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
